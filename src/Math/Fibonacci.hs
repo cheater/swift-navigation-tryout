@@ -23,7 +23,7 @@ fib_fast n = snd . foldl' fib_ (1, 0) . dropWhile not $
 -- <https://oeis.org/A000045/b000045.txt values> were taken from the Online
 -- Encyclopedia of Integer Sequences, entry <https://oeis.org/A000045 A000045>.
 -- This function can be used to check another implementation of the Fibonacci
--- sequence.
+-- numbers.
 fib_table :: Int -> Integer
 fib_table n = (flip (!!)) n
   [ 0
