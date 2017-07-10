@@ -2,11 +2,11 @@ module Acme.FizzBuzz.Types where
 
 -- |The 'NumberClass' type tells us what sort of number we are dealing with
 -- for the purposes of 'FizzBuzz'.
-data NumberClass = DivBy3 | DivBy5 | DivBy15  | Prime    | OtherNum Int
+data NumberClass = DivBy3 | DivBy5 | DivBy15  | Prime    | OtherNum Integer
   deriving (Eq, Show)
 
 -- |The 'FizzBuzz' type tells us if we Fizz or Buzz.
-data FizzBuzz    = Buzz   | Fizz   | FizzBuzz | BuzzFizz | OtherFB  Int
+data FizzBuzz    = Buzz   | Fizz   | FizzBuzz | BuzzFizz | OtherFB  Integer
   deriving Eq
 
 ncToFb :: NumberClass -> FizzBuzz
