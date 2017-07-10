@@ -1,0 +1,17 @@
+This is the Fibonacci FizzBuzz program.
+
+You may use the following commands to run it:
+
+cabal sandbox init
+cabal update
+cabal install
+cabal run 45
+
+
+You can also run tests with the following commands:
+
+cabal install --enable-tests
+cabal test
+
+
+Have fun!
