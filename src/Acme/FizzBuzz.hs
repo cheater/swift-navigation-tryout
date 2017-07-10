@@ -1,3 +1,9 @@
+{-|
+Module      : Acme.FizzBuzz
+Description : Utility functions for FizzBuzz
+License     : MIT
+Maintainer  : cheater00@gmail.com
+-}
 module Acme.FizzBuzz where
 
 import Math.Fibonacci (fib_fast)

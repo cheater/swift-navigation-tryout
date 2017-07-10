@@ -1,3 +1,12 @@
+{-|
+Module      : Math.Fibonacci
+Description : A fast implementation of the Fibonacci numbers
+License     : MIT
+Maintainer  : cheater00@gmail.com
+
+A fast implementation of the Fibonacci numbers, as well as a table of Fibonacci
+numbers to test against.
+-}
 module Math.Fibonacci (fib_fast, fib_table) where
 
 import Data.List (foldl')
