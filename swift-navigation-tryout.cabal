@@ -10,13 +10,13 @@ name:                swift-navigation-tryout
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.0.0
+version:             1.0.0.0
 
 -- A short (one-line) description of the package.
 synopsis:            Swift Navigation Application Question
 
 -- A longer description of the package.
--- description:         
+-- description:
 
 -- The license under which the package is released.
 license:             MIT
@@ -32,7 +32,7 @@ author:              -
 maintainer:          cheater00@gmail.com
 
 -- A copyright notice.
--- copyright:           
+-- copyright:
 
 category:            Example
 
@@ -40,38 +40,35 @@ build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or a 
 -- README.
--- extra-source-files:  
+-- extra-source-files:
 
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
 
 executable swift-navigation-tryout
-  -- .hs or .lhs file containing the Main module.
+  default-language:    Haskell2010
+  hs-source-dirs:      src
   main-is:             Main.hs
-  
-  -- Modules included in this executable, other than Main.
-  -- other-modules:       
-  
-  -- LANGUAGE extensions used by modules in this package.
-  -- other-extensions:    
-  
-  -- Other library packages from which modules are imported.
   build-depends:       base >=4.8 && <4.9,
                        arithmoi >=0.5.0.1 && <0.6
-  
-  -- Directories containing source files.
-  hs-source-dirs:      src
-  
-  -- Base language which the package is written in.
-  default-language:    Haskell2010
-  
+
 library
   default-language:    Haskell2010
   hs-source-dirs:      src
   build-depends:       base >=4.8 && <4.9,
                        arithmoi >=0.5.0.1 && <0.6
-  exposed-modules: Acme.FizzBuzz.Types,
-                   Acme.FizzBuzz,
-                   Math.Fibonacci,
-                   Math.FizzBuzz
+  exposed-modules:     Acme.FizzBuzz.Types,
+                       Acme.FizzBuzz,
+                       Math.Fibonacci,
+                       Math.FizzBuzz
+
+test-suite fibonacci
+  default-language:    Haskell2010
+  hs-source-dirs:      test src
+  type:                exitcode-stdio-1.0
+  main-is:             Test.hs
+  build-depends:       base >=4.8 && <4.9,
+                       QuickCheck >=2.10 && <2.11,
+                       test-framework >=0.8.1.1 && <0.9,
+                       test-framework-quickcheck2 >=0.3.0.4  && <0.4
