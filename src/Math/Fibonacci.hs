@@ -3,7 +3,7 @@ module Math.Fibonacci (fib_fast, fib_table) where
 import Data.List (foldl')
 import Data.Bits (testBit, finiteBitSize)
 
--- |A fast implementation of the Fibonacci sequence. This is much faster than
+-- |A fast implementation of the Fibonacci numbers. This is much faster than
 -- the naiive implementation, but it is not easily visible why the definition
 -- is equivalent. This definition is a version taken from the following URL,
 -- slightly modified for readability:
