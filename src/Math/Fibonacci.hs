@@ -7,7 +7,7 @@ Maintainer  : cheater00@gmail.com
 A fast implementation of the Fibonacci numbers, as well as a table of Fibonacci
 numbers to test against.
 -}
-module Math.Fibonacci (fib_fast, fib_table) where
+module Math.Fibonacci (fibFast, fibTable) where
 
 import Data.List (foldl')
 import Data.Bits (testBit, finiteBitSize)
@@ -17,8 +17,8 @@ import Data.Bits (testBit, finiteBitSize)
 -- is equivalent. This definition is a version taken from the following URL,
 -- slightly modified for readability:
 -- <https://wiki.haskell.org/The_Fibonacci_sequence#Fastest_Fib_in_the_West The Fibonacci sequence on the Haskell Wiki>
-fib_fast :: Int -> Integer
-fib_fast n = snd . foldl' fib_ (1, 0) . dropWhile not $
+fibFast :: Int -> Integer
+fibFast n = snd . foldl' fib_ (1, 0) . dropWhile not $
   [testBit n k | k <- let s = finiteBitSize n in [s - 1, s - 2 .. 0]]
   where
     fib_ (f, g) p
@@ -28,13 +28,13 @@ fib_fast n = snd . foldl' fib_ (1, 0) . dropWhile not $
             ss =   f*f + g*g
             tt = 2*f*g - g*g
 
--- |'fib_table' uses a table of Lamé's sequence up to index 1000. These
+-- |'fibTable' uses a table of Lamé's sequence up to index 1000. These
 -- <https://oeis.org/A000045/b000045.txt values> were taken from the Online
 -- Encyclopedia of Integer Sequences, entry <https://oeis.org/A000045 A000045>.
 -- This function can be used to check another implementation of the Fibonacci
 -- numbers.
-fib_table :: Int -> Integer
-fib_table n = (flip (!!)) n
+fibTable :: Int -> Integer
+fibTable n = (flip (!!)) n
   [ 0
   , 1
   , 1
