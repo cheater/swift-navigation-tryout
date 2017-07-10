@@ -6,7 +6,7 @@ data NumberClass = DivBy3 | DivBy5 | DivBy15  | Prime    | OtherNum Int
   deriving (Eq, Show)
 
 -- |The 'FizzBuzz' type tells us if we Fizz or Buzz.
-data FizzBuzz      = Buzz   | Fizz   | FizzBuzz | BuzzFizz | OtherFB  Int
+data FizzBuzz    = Buzz   | Fizz   | FizzBuzz | BuzzFizz | OtherFB  Int
   deriving Eq
 
 ncToFb :: NumberClass -> FizzBuzz
@@ -15,7 +15,6 @@ ncToFb x
   | x == DivBy5  = Fizz
   | x == DivBy15 = FizzBuzz
   | x == Prime   = BuzzFizz
-
 ncToFb (OtherNum n) = OtherFB n
 
 instance Show FizzBuzz where
